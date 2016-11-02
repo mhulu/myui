@@ -16,8 +16,6 @@
  */
 import Vue from 'vue'
 
-Vue.config.debug = process.env.NODE_ENV !== 'production'
-
 /* ============
  * Vue Resource
  * ============
@@ -39,6 +37,17 @@ Vue.http.interceptors.push((request, next) => {
     // When the token is invalid, log the user out
     if (response.status === 401) {
       authService.logout()
+    }
+    if (!response.ok) {
+      Vue.prototype.$swal({
+        title: '网络故障',
+        text: '系统无法连接到服务器',
+        type: 'error',
+        allowOutsideClick: false,
+        confirmButtonText: '重试一次'
+      }).then(function () {
+        window.location.reload()
+      })
     }
   })
 })
@@ -108,13 +117,44 @@ Vue.router = router
  */
 import Validator from './app/validator/vee-validate'
 Vue.use(Validator)
-
+/**
+ * ============
+ * VueSweetAlert
+ * ============
+ * Usage:
+ * Vue.prototype.$swal(...)
+ */
 import VueSweetAlert from 'vue-sweetalert'
 Vue.use(VueSweetAlert)
+/**
+ * ==============
+ * VueProgressBar
+ * ==============
+ */
+import VueProgressBar from 'vue-progressbar'
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '2px'
+})
+/**
+ * ==============================
+ * VueResourceProgressbarInterceptor
+ * ==============================
+ */
+import ProgressBarResource from 'vue-resource-progressbar-interceptor'
+Vue.use(ProgressBarResource)
 
-// import Element from 'element-ui'
-// import 'element-ui/lib/theme-default/index.css'
-// Vue.use(Element)
+/* ============
+ * underscore
+ * ============
+ *
+ * Require underscore
+ *
+ */
+import underscore from 'underscore'
+window._ = underscore
+
 /* ============
  * jQuery
  * ============
@@ -123,10 +163,9 @@ Vue.use(VueSweetAlert)
  *
  * http://jquery.com/
  */
-// import jQuery from 'jquery'
+import jQuery from 'jquery'
 
-// window.$ = window.jQuery = jQuery
-
+window.$ = window.jQuery = jQuery
 /* ============
  * Bootstrap
  * ============

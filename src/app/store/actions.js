@@ -11,7 +11,10 @@ import * as types from './mutation-types'
 export const getAccount = ({ commit }, account) => {
   commit(types.GET_ACCOUNT, account)
 }
-
+// getHealth
+export const getHealthOptions = ({ commit }, options) => {
+  commit(types.GET_HEALTH, options)
+}
 // Auth
 export const login = ({ commit }, token) => {
   commit(types.LOGIN, token)
@@ -23,4 +26,8 @@ export const logout = ({ commit }) => {
 
 export const checkAuthentication = ({ commit }) => {
   commit(types.CHECK_AUTHENTICATION)
+}
+
+export const toggleFullscreen = ({commit}) => {
+  commit(types.FULLSCREEN)
 }

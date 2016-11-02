@@ -5,8 +5,9 @@ import {API_ROOT} from './../../config'
 const success = (response) => {
   Vue.prototype.$swal({
     title: '操作成功',
-    text: response.body.result[0],
+    text: response,
     type: 'success',
+    allowOutsideClick: false,
     confirmButtonText: '返回登录'
   }).then(() => {
     Vue.router.push({
@@ -19,17 +20,18 @@ const success = (response) => {
 const failed = (response) => {
   Vue.prototype.$swal({
     title: '操作失败',
-    text: response.body.result[0],
+    text: response,
     type: 'error',
+    allowOutsideClick: false,
     confirmButtonText: '重新填写'
   })
 }
 
 export default (user) => {
-  Vue.http.post(API_ROOT + 'signup?findpass', user)
+  Vue.http.post(API_ROOT + 'auth/signup?findpass', user)
     .then((response) => {
-      success(response)
+      success(response.body.result)
     }, (response) => {
-      failed(response)
+      failed(response.body.result)
     })
 }

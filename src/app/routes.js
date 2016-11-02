@@ -13,27 +13,40 @@
 export default [
   // Home
   {
-    path: '/home',
-    name: 'home.index',
+    path: '/',
     component: require('./pages/home.vue'),
-
-    // If the user needs to be authenticated to view this page
     meta: {
       auth: true
-    }
+    },
+    children: [
+      {path: '/home', name: 'home.index', component: require('./pages/dashboard/index.vue')},
+      {path: '/account', name: 'account.index', component: require('./pages/dashboard/account/index.vue')},
+      {path: '/pop', name: 'pop.index', component: require('./pages/pop/index.vue')},
+      {path: '/pop/new', name: 'pop.new', component: require('./pages/pop/new.vue')}
+    ]
   },
 
   // Account
-  {
-    path: '/account',
-    name: 'account.index',
-    component: require('./pages/dashboard/account.vue'),
+  // {
+  //   path: '/account',
+  //   name: 'account.index',
+  //   component: require('./pages/dashboard/account.vue'),
 
-    // If the user needs to be authenticated to view this page
-    meta: {
-      auth: true
-    }
-  },
+  //   // If the user needs to be authenticated to view this page
+  //   meta: {
+  //     auth: true
+  //   }
+  // },
+
+  // Pop
+  // {
+  //   path: '/pop',
+  //   name: 'pop.index',
+  //   component: require('./pages/pop/index.vue'),
+  //   meta: {
+  //     auth: true
+  //   }
+  // },
 
   // Login
   {

@@ -77,16 +77,8 @@ boder-{right left top bottom} border-{light dark}
     border: 1px solid $border-default !important;
 }
 
-.panel-white .border-light, .partition-white .border-light {
-    border-color: rgba(0, 0, 0, 0.07) !important;
-}
-
 .border-dark {
     border-color: rgba(0, 0, 0, 0.2);
-}
-
-.panel-white .border-dark, .partition-white .border-dark {
-    border-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .block {

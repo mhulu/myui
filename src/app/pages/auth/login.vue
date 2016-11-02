@@ -37,22 +37,15 @@
 
 <script>
 import VLayout from '../../layouts/minimal/minimal.vue'
-// import countDown from '../../components/countDown.vue'
 import Auth from '../../services/auth'
-import sendAuthcode from '../../components/sendAuthcode.vue'
-// import Sms from '../../services/sms'
-// import {API_ROOT} from '../../config'
 export default {
   data: function () {
     return {
-      credentials: {
-        newMobile: '',
-        authCode: ''
-      }
+      credentials: {}
     }
   },
   components: {
-    VLayout, sendAuthcode
+    VLayout
   },
   methods: {
     onSubmit: function () {

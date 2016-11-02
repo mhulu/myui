@@ -8,12 +8,17 @@
  * This way the app stays clean.
  */
 
-import authService from './../../services/auth';
-
+import authService from './../../services/auth'
+import sidebar from '../../components/sidebar'
+import topNavbar from '../../components/topNavbar'
+import breadcrumb from '../../components/Breadcrumb'
 export default {
   methods: {
     logout() {
-      authService.logout();
-    },
+      authService.logout()
+    }
   },
+  components: {
+    sidebar, topNavbar, breadcrumb
+  }
 };

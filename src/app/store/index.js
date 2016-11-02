@@ -16,6 +16,8 @@ import * as getters from './getters'
 // Modules
 import account from './modules/account'
 import auth from './modules/auth'
+import fullscreen from './modules/fullscreen'
+import health from './modules/health'
 
 Vue.use(Vuex)
 
@@ -37,7 +39,9 @@ export default new Vuex.Store({
    */
   modules: {
     account,
-    auth
+    auth,
+    fullscreen,
+    health
   },
 
   /**

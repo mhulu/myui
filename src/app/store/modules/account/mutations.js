@@ -4,7 +4,9 @@ import {
 
 export default {
   [GET_ACCOUNT] (state, account) {
-    state.mobile = account.mobile
-    state.username = account.username
+    state.userInfo = account.userInfo
+    state.menus = account.menus
+    state.roles = account.roles
+    // state.username = account.baseInfo.realname
   }
 }

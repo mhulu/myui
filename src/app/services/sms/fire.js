@@ -1,34 +1,32 @@
 import Vue from 'vue'
 
 // When the request succeeds
-const success = (res) => {
+const success = (response) => {
   Vue.prototype.$swal({
-    title: '短信发送成功',
-    text: res.result,
+    title: '短信已发送',
+    text: response,
     type: 'success',
+    allowOutsideClick: false,
     confirmButtonText: '继续操作'
   })
 }
 
 // When the request fails
-const failed = (res) => {
+const failed = (response) => {
   Vue.prototype.$swal({
     title: '短信发送失败',
-    text: res.result,
+    text: response,
     type: 'error',
-    confirmButtonText: '返回登录'
+    allowOutsideClick: false,
+    confirmButtonText: '重新填写'
   })
 }
 
 export default (url, data) => {
-  /*
-   * Normally you would perform an AJAX-request.
-   * But to get the example working, the data is hardcoded.
-   */
   Vue.http.post(url, data)
-    .then((res) => {
-      success(res.body)
-    }, (res) => {
-      failed(res.body)
+    .then((response) => {
+      success(response.body.result)
+    }, (response) => {
+      failed(response.body.result)
     })
 }

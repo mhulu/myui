@@ -8,6 +8,14 @@
     background: $black;
     overflow: visible;
     z-index: 1051;
+    .main-navigation-menu .router-link-active {
+        border-left: 4px solid #F18636 !important;
+        background: #263244;
+        box-shadow: none;
+      }
+    .main-navigation-menu .sub-menu .router-link-active {
+        background-color: #303c4e;
+      }
     .search-form {
         .navbar-form {
             background: darken($black,2%);
@@ -129,6 +137,9 @@
                         &:hover {
                             color: $black;
                         }
+                    }
+                    .router-link-active {
+                        border:none;
                     }
                 }
             }
@@ -637,8 +648,6 @@
             padding: 0;
           }
         }
-
-
         > a {
           margin-top: -1px !important;
           font-size: $font-size-normal;
@@ -671,12 +680,9 @@
     }
   }
 
-
   ul.sub-menu {
-    clear: both;
     list-style: none;
     padding: 1px 0;
-    display: none;
     margin: 0;
     transition: all 0.5s;
 

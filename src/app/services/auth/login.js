@@ -16,21 +16,18 @@ const success = (token) => {
 const failed = (res) => {
   Vue.prototype.$swal({
     title: '登录失败',
-    text: res.body.result,
+    text: res,
     type: 'error',
+    allowOutsideClick: false,
     confirmButtonText: '返回重写'
   })
 }
 
 export default (user) => {
-  /*
-   * Normally you would perform an AJAX-request.
-   * But to get the example working, the data is hardcoded.
-   */
   Vue.http.post(API_ROOT + 'auth/login', user)
     .then((res) => {
-      success(res.body)
+      success(res.body.result)
     }, (res) => {
-      failed(res)
+      failed(res.body.result)
     })
 }

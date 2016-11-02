@@ -59,11 +59,8 @@
 
 <script>
 import VLayout from '../../layouts/minimal/minimal.vue'
-// import countDown from '../../components/countDown.vue'
 import Auth from '../../services/auth'
 import sendAuthcode from '../../components/sendAuthcode.vue'
-// import Sms from '../../services/sms'
-// import {API_ROOT} from '../../config'
 export default {
   data: function () {
     return {
@@ -79,8 +76,8 @@ export default {
   methods: {
     signUp: function () {
       const user = {
-        newMobile: this.credentials.newMobile,
-        newPassword: this.credentials.newPassword,
+        mobile: this.credentials.newMobile,
+        password: this.credentials.newPassword,
         authCode: this.credentials.authCode
       }
       Auth.register(user)

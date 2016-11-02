@@ -23,5 +23,6 @@ export default {
     state.authenticated = false
     window.localStorage.removeItem('id_token')
     Vue.http.headers.common.Authorization = null
+    window.location.reload()
   }
 }

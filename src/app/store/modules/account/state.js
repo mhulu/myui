@@ -1,4 +1,5 @@
 export default {
-  mobile: null,
-  username: null
+  userInfo: null,
+  roles: null,
+  menus: null
 }

@@ -1,6 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
+    <vue-progress-bar></vue-progress-bar>
   </div>
 </template>
 <script>
@@ -25,7 +26,6 @@
      * The router
      */
     router,
-
     /**
      * Fires when the app has been mounted
      */
