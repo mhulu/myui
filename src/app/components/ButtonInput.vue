@@ -30,7 +30,7 @@
                 <a class="btn-success input-btn fadeIn" v-show="this.newText.trim() !=''" @click="addNew($event)"><i class="fa fa-plus"></i></a>
               </li>
               <li v-for="item in collection" v-bind:key="item.index">
-                <input type="text" v-model="item" class="form-control underline margin-top-15">
+                <input type="text" v-model="items.item" class="form-control underline margin-top-15">
                 <a class="btn-danger input-btn" @click="remove(item)"><i class="fa fa-times"></i></a>
               </li>
             </ul>
@@ -70,7 +70,8 @@
         newText: '',
         textPre: '',
         selected: '',
-        currentOption: ''
+        currentOption: '',
+        items: {}
       }
     },
     methods: {

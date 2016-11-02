@@ -9,8 +9,8 @@
  */
 
 import authService from './../../services/auth'
-import sidebar from '../../components/sidebar'
-import topNavbar from '../../components/topNavbar'
+import sidebar from '../../components/Sidebar'
+import topNavbar from '../../components/TopNavbar'
 import breadcrumb from '../../components/Breadcrumb'
 export default {
   methods: {

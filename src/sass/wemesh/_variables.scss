@@ -62,9 +62,9 @@ $text-dark: darken($text-color, 30%) !default;
 $text-light: lighten($text-color, 5%) !default;
 $link-color: $primary !default;
 
-$font-family-primary: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+$font-family-primary: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 $font-family-secondary: "Lato", sans-serif !default;
-$font-family-default: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+$font-family-default: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 $font-size-base: 14px !default;
 $font-size-normal: 14px !default;
 $font-size-large: floor(($font-size-base * 1.25)) !default; // ~15px
